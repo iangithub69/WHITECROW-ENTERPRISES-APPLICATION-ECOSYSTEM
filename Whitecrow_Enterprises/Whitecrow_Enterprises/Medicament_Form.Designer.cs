@@ -52,7 +52,7 @@
             root_panel.Dock = DockStyle.Fill;
             root_panel.Location = new Point(0, 0);
             root_panel.Name = "root_panel";
-            root_panel.Size = new Size(2302, 1204);
+            root_panel.Size = new Size(2056, 1204);
             root_panel.TabIndex = 0;
             // 
             // dataGridView1
@@ -63,7 +63,7 @@
             dataGridView1.Location = new Point(59, 242);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(2180, 707);
+            dataGridView1.Size = new Size(1917, 707);
             dataGridView1.TabIndex = 5;
             // 
             // searchbox_panel
@@ -120,7 +120,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2302, 1204);
+            ClientSize = new Size(2056, 1204);
             Controls.Add(root_panel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Medicament_Form";

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_Form));
             root_panel = new Panel();
+            formloader_panel = new Panel();
             sidebar_panel = new Panel();
             pictureBox1 = new PictureBox();
             agriculture_button = new Button();
             medicament_button = new Button();
             header_panel = new Panel();
             close_button = new Button();
-            formloader_panel = new Panel();
             root_panel.SuspendLayout();
             sidebar_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -53,6 +53,15 @@
             root_panel.Name = "root_panel";
             root_panel.Size = new Size(1894, 1129);
             root_panel.TabIndex = 0;
+            // 
+            // formloader_panel
+            // 
+            formloader_panel.Dock = DockStyle.Fill;
+            formloader_panel.Location = new Point(331, 76);
+            formloader_panel.Name = "formloader_panel";
+            formloader_panel.Size = new Size(1563, 1053);
+            formloader_panel.TabIndex = 2;
+            formloader_panel.Paint += formloader_panel_Paint;
             // 
             // sidebar_panel
             // 
@@ -129,15 +138,6 @@
             close_button.TabIndex = 1;
             close_button.UseVisualStyleBackColor = true;
             close_button.Click += close_button_Click;
-            // 
-            // formloader_panel
-            // 
-            formloader_panel.Dock = DockStyle.Fill;
-            formloader_panel.Location = new Point(331, 76);
-            formloader_panel.Name = "formloader_panel";
-            formloader_panel.Size = new Size(1563, 1053);
-            formloader_panel.TabIndex = 2;
-            formloader_panel.Paint += formloader_panel_Paint;
             // 
             // Home_Form
             // 
