@@ -19,6 +19,7 @@ namespace Whitecrow_Enterprises
             close_button.FlatAppearance.BorderSize = 0;
             medicament_button.FlatAppearance.BorderSize = 0;
             agriculture_button.FlatAppearance.BorderSize = 0;
+            construction_button.FlatAppearance.BorderSize = 0;
 
         }
 
@@ -50,7 +51,7 @@ namespace Whitecrow_Enterprises
             medicament_button.BackColor = Color.FromArgb(205, 153, 47);
             medicament_button.ForeColor = Color.FromArgb(240, 240, 240);
 
-
+            formloader_panel.Controls.Clear();
 
         }
 
@@ -75,6 +76,11 @@ namespace Whitecrow_Enterprises
         private void header_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void construction_button_Click(object sender, EventArgs e)
+        {
+            formloader_panel.Controls.Clear();
         }
     }
 }

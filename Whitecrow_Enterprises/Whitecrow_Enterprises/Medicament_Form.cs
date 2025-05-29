@@ -32,6 +32,10 @@ namespace Whitecrow_Enterprises
             sell_button.FlatStyle = FlatStyle.Flat;
             sell_button.FlatAppearance.BorderColor = Color.FromArgb(205, 153, 47);
             sell_button.FlatAppearance.BorderSize = 2;
+
+            panel1.BackColor = Color.FromArgb(205, 153, 47); // Border color
+            panel1.Padding = new Padding(2); // Thickness
+            dataGridView1.BorderStyle = BorderStyle.None;
         }
 
         private void Medicament_Form_Load(object sender, EventArgs e)
@@ -40,6 +44,21 @@ namespace Whitecrow_Enterprises
         }
 
         private void sell_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void edit_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

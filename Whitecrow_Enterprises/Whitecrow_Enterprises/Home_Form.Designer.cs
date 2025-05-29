@@ -32,6 +32,7 @@
             root_panel = new Panel();
             formloader_panel = new Panel();
             sidebar_panel = new Panel();
+            construction_button = new Button();
             pictureBox1 = new PictureBox();
             agriculture_button = new Button();
             medicament_button = new Button();
@@ -66,6 +67,7 @@
             // sidebar_panel
             // 
             sidebar_panel.BackColor = Color.FromArgb(205, 153, 47);
+            sidebar_panel.Controls.Add(construction_button);
             sidebar_panel.Controls.Add(pictureBox1);
             sidebar_panel.Controls.Add(agriculture_button);
             sidebar_panel.Controls.Add(medicament_button);
@@ -74,6 +76,21 @@
             sidebar_panel.Name = "sidebar_panel";
             sidebar_panel.Size = new Size(331, 1053);
             sidebar_panel.TabIndex = 1;
+            // 
+            // construction_button
+            // 
+            construction_button.FlatStyle = FlatStyle.Flat;
+            construction_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            construction_button.ForeColor = SystemColors.Control;
+            construction_button.Image = (Image)resources.GetObject("construction_button.Image");
+            construction_button.Location = new Point(0, 146);
+            construction_button.Name = "construction_button";
+            construction_button.Size = new Size(331, 67);
+            construction_button.TabIndex = 4;
+            construction_button.Text = "Construction";
+            construction_button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            construction_button.UseVisualStyleBackColor = true;
+            construction_button.Click += construction_button_Click;
             // 
             // pictureBox1
             // 
@@ -168,5 +185,6 @@
         private Button agriculture_button;
         private PictureBox pictureBox1;
         private Panel formloader_panel;
+        private Button construction_button;
     }
 }

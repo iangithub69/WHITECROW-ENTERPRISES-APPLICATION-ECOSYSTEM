@@ -30,22 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medicament_Form));
             root_panel = new Panel();
+            delete_button = new Button();
+            restock_button = new Button();
+            edit_button = new Button();
+            add_button = new Button();
             button1 = new Button();
             sell_button = new Button();
-            dataGridView1 = new DataGridView();
             searchbox_panel = new Panel();
             searchbox_textbox = new TextBox();
             pictureBox1 = new PictureBox();
             datetime_label = new Label();
             header_label = new Label();
-            add_button = new Button();
-            edit_button = new Button();
-            restock_button = new Button();
-            delete_button = new Button();
+            panel1 = new Panel();
+            dataGridView1 = new DataGridView();
             root_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             searchbox_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // root_panel
@@ -56,16 +58,69 @@
             root_panel.Controls.Add(add_button);
             root_panel.Controls.Add(button1);
             root_panel.Controls.Add(sell_button);
-            root_panel.Controls.Add(dataGridView1);
             root_panel.Controls.Add(searchbox_panel);
             root_panel.Controls.Add(pictureBox1);
             root_panel.Controls.Add(datetime_label);
             root_panel.Controls.Add(header_label);
+            root_panel.Controls.Add(panel1);
             root_panel.Dock = DockStyle.Fill;
             root_panel.Location = new Point(0, 0);
             root_panel.Name = "root_panel";
             root_panel.Size = new Size(2401, 1567);
             root_panel.TabIndex = 0;
+            // 
+            // delete_button
+            // 
+            delete_button.BackColor = SystemColors.ButtonFace;
+            delete_button.FlatStyle = FlatStyle.Flat;
+            delete_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            delete_button.ForeColor = Color.Red;
+            delete_button.Location = new Point(1613, 1449);
+            delete_button.Name = "delete_button";
+            delete_button.Size = new Size(327, 91);
+            delete_button.TabIndex = 11;
+            delete_button.Text = "Delete";
+            delete_button.UseVisualStyleBackColor = false;
+            // 
+            // restock_button
+            // 
+            restock_button.BackColor = SystemColors.ButtonFace;
+            restock_button.FlatStyle = FlatStyle.Flat;
+            restock_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            restock_button.ForeColor = Color.FromArgb(205, 153, 47);
+            restock_button.Location = new Point(1229, 1449);
+            restock_button.Name = "restock_button";
+            restock_button.Size = new Size(327, 91);
+            restock_button.TabIndex = 10;
+            restock_button.Text = "Restock";
+            restock_button.UseVisualStyleBackColor = false;
+            // 
+            // edit_button
+            // 
+            edit_button.BackColor = SystemColors.ButtonFace;
+            edit_button.FlatStyle = FlatStyle.Flat;
+            edit_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            edit_button.ForeColor = Color.FromArgb(205, 153, 47);
+            edit_button.Location = new Point(833, 1449);
+            edit_button.Name = "edit_button";
+            edit_button.Size = new Size(327, 91);
+            edit_button.TabIndex = 9;
+            edit_button.Text = "Edit";
+            edit_button.UseVisualStyleBackColor = false;
+            edit_button.Click += edit_button_Click;
+            // 
+            // add_button
+            // 
+            add_button.BackColor = SystemColors.ButtonFace;
+            add_button.FlatStyle = FlatStyle.Flat;
+            add_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            add_button.ForeColor = Color.FromArgb(205, 153, 47);
+            add_button.Location = new Point(445, 1449);
+            add_button.Name = "add_button";
+            add_button.Size = new Size(327, 91);
+            add_button.TabIndex = 8;
+            add_button.Text = "Add";
+            add_button.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -89,17 +144,6 @@
             sell_button.Text = "Sell";
             sell_button.UseVisualStyleBackColor = false;
             sell_button.Click += sell_button_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.FromArgb(205, 153, 47);
-            dataGridView1.Location = new Point(59, 242);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(2307, 1175);
-            dataGridView1.TabIndex = 5;
             // 
             // searchbox_panel
             // 
@@ -151,57 +195,27 @@
             header_label.TabIndex = 0;
             header_label.Text = "MEDICAMENT INVENTORY MANAGER";
             // 
-            // add_button
+            // panel1
             // 
-            add_button.BackColor = SystemColors.ButtonFace;
-            add_button.FlatStyle = FlatStyle.Flat;
-            add_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            add_button.ForeColor = Color.FromArgb(205, 153, 47);
-            add_button.Location = new Point(445, 1449);
-            add_button.Name = "add_button";
-            add_button.Size = new Size(327, 91);
-            add_button.TabIndex = 8;
-            add_button.Text = "Add";
-            add_button.UseVisualStyleBackColor = false;
+            panel1.Controls.Add(dataGridView1);
+            panel1.Location = new Point(59, 229);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(2307, 1195);
+            panel1.TabIndex = 12;
+            panel1.Paint += panel1_Paint;
             // 
-            // edit_button
+            // dataGridView1
             // 
-            edit_button.BackColor = SystemColors.ButtonFace;
-            edit_button.FlatStyle = FlatStyle.Flat;
-            edit_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            edit_button.ForeColor = Color.FromArgb(205, 153, 47);
-            edit_button.Location = new Point(833, 1449);
-            edit_button.Name = "edit_button";
-            edit_button.Size = new Size(327, 91);
-            edit_button.TabIndex = 9;
-            edit_button.Text = "Edit";
-            edit_button.UseVisualStyleBackColor = false;
-            // 
-            // restock_button
-            // 
-            restock_button.BackColor = SystemColors.ButtonFace;
-            restock_button.FlatStyle = FlatStyle.Flat;
-            restock_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            restock_button.ForeColor = Color.FromArgb(205, 153, 47);
-            restock_button.Location = new Point(1229, 1449);
-            restock_button.Name = "restock_button";
-            restock_button.Size = new Size(327, 91);
-            restock_button.TabIndex = 10;
-            restock_button.Text = "Restock";
-            restock_button.UseVisualStyleBackColor = false;
-            // 
-            // delete_button
-            // 
-            delete_button.BackColor = SystemColors.ButtonFace;
-            delete_button.FlatStyle = FlatStyle.Flat;
-            delete_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            delete_button.ForeColor = Color.Red;
-            delete_button.Location = new Point(1613, 1449);
-            delete_button.Name = "delete_button";
-            delete_button.Size = new Size(327, 91);
-            delete_button.TabIndex = 11;
-            delete_button.Text = "Delete";
-            delete_button.UseVisualStyleBackColor = false;
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.GridColor = Color.FromArgb(205, 153, 47);
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.Size = new Size(2307, 1195);
+            dataGridView1.TabIndex = 5;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Medicament_Form
             // 
@@ -215,10 +229,11 @@
             Load += Medicament_Form_Load;
             root_panel.ResumeLayout(false);
             root_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             searchbox_panel.ResumeLayout(false);
             searchbox_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -237,5 +252,6 @@
         private Button restock_button;
         private Button edit_button;
         private Button add_button;
+        private Panel panel1;
     }
 }
