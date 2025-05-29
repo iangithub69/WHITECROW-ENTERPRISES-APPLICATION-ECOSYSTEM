@@ -72,8 +72,9 @@ namespace Whitecrow_Enterprises
             formToLoad.Show();
         }
 
+        private void header_panel_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
+        }
     }
 }

@@ -125,6 +125,7 @@
             header_panel.Name = "header_panel";
             header_panel.Size = new Size(1894, 76);
             header_panel.TabIndex = 0;
+            header_panel.Paint += header_panel_Paint;
             // 
             // close_button
             // 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Whitecrow_Enterprises")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5e3850405e97640eaccc5371eb8ff9ddc573eb0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3740cefb735be5cb1fea17f65adc6da20a9e3cb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Whitecrow_Enterprises")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Whitecrow_Enterprises")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
