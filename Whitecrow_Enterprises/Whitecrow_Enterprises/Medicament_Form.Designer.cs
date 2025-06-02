@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medicament_Form));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             root_panel = new Panel();
             delete_button = new Button();
             restock_button = new Button();
             edit_button = new Button();
             add_button = new Button();
-            button1 = new Button();
             sell_button = new Button();
             searchbox_panel = new Panel();
             searchbox_textbox = new TextBox();
@@ -56,7 +56,6 @@
             root_panel.Controls.Add(restock_button);
             root_panel.Controls.Add(edit_button);
             root_panel.Controls.Add(add_button);
-            root_panel.Controls.Add(button1);
             root_panel.Controls.Add(sell_button);
             root_panel.Controls.Add(searchbox_panel);
             root_panel.Controls.Add(pictureBox1);
@@ -121,15 +120,6 @@
             add_button.TabIndex = 8;
             add_button.Text = "Add";
             add_button.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(2216, 151);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 46);
-            button1.TabIndex = 7;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // sell_button
             // 
@@ -207,6 +197,14 @@
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.FromArgb(205, 153, 47);
@@ -247,7 +245,6 @@
         private Panel searchbox_panel;
         private DataGridView dataGridView1;
         private Button sell_button;
-        private Button button1;
         private Button delete_button;
         private Button restock_button;
         private Button edit_button;

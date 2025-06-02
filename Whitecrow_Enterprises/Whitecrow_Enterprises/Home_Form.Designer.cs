@@ -32,6 +32,7 @@
             root_panel = new Panel();
             formloader_panel = new Panel();
             sidebar_panel = new Panel();
+            livestock_button = new Button();
             construction_button = new Button();
             pictureBox1 = new PictureBox();
             agriculture_button = new Button();
@@ -67,6 +68,7 @@
             // sidebar_panel
             // 
             sidebar_panel.BackColor = Color.FromArgb(205, 153, 47);
+            sidebar_panel.Controls.Add(livestock_button);
             sidebar_panel.Controls.Add(construction_button);
             sidebar_panel.Controls.Add(pictureBox1);
             sidebar_panel.Controls.Add(agriculture_button);
@@ -76,6 +78,21 @@
             sidebar_panel.Name = "sidebar_panel";
             sidebar_panel.Size = new Size(331, 1053);
             sidebar_panel.TabIndex = 1;
+            // 
+            // livestock_button
+            // 
+            livestock_button.FlatStyle = FlatStyle.Flat;
+            livestock_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            livestock_button.ForeColor = SystemColors.Control;
+            livestock_button.Image = (Image)resources.GetObject("livestock_button.Image");
+            livestock_button.Location = new Point(0, 219);
+            livestock_button.Name = "livestock_button";
+            livestock_button.Size = new Size(331, 67);
+            livestock_button.TabIndex = 5;
+            livestock_button.Text = "Livestocks";
+            livestock_button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            livestock_button.UseVisualStyleBackColor = true;
+            livestock_button.Click += livestock_button_Click;
             // 
             // construction_button
             // 
@@ -186,5 +203,6 @@
         private PictureBox pictureBox1;
         private Panel formloader_panel;
         private Button construction_button;
+        private Button livestock_button;
     }
 }

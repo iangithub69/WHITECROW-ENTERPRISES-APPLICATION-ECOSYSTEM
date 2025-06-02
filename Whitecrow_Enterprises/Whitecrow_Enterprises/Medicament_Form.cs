@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,40 @@ namespace Whitecrow_Enterprises
             panel1.BackColor = Color.FromArgb(205, 153, 47); // Border color
             panel1.Padding = new Padding(2); // Thickness
             dataGridView1.BorderStyle = BorderStyle.None;
+
+            LoadDataToGrid();
+
+            // Adjust columns to fit content
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            // Optional: Adjust rows to fit content (especially if you have multiline text)
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
+
+        private void LoadDataToGrid()
+        {
+            string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM medicaments_information"; // Replace with your actual table
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    dataGridView1.DataSource = table;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+
 
         private void Medicament_Form_Load(object sender, EventArgs e)
         {

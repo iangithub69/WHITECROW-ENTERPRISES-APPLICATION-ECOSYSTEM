@@ -20,6 +20,7 @@ namespace Whitecrow_Enterprises
             medicament_button.FlatAppearance.BorderSize = 0;
             agriculture_button.FlatAppearance.BorderSize = 0;
             construction_button.FlatAppearance.BorderSize = 0;
+            livestock_button.FlatAppearance.BorderSize = 0;
 
         }
 
@@ -79,6 +80,11 @@ namespace Whitecrow_Enterprises
         }
 
         private void construction_button_Click(object sender, EventArgs e)
+        {
+            formloader_panel.Controls.Clear();
+        }
+
+        private void livestock_button_Click(object sender, EventArgs e)
         {
             formloader_panel.Controls.Clear();
         }
