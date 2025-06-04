@@ -55,7 +55,8 @@ namespace Whitecrow_Enterprises
                 try
                 {
                     conn.Open();
-                    string query = "SELECT * FROM medicaments_information"; // Replace with your actual table
+                    string query = "SELECT generic_name AS 'GENERIC NAME', brand AS 'BRAND', dosage AS 'DOSAGE', unit AS 'UNIT', expiry_date AS 'EXPIRY DATE', stock AS 'STOCK', selling_price AS 'SELLING PRICE', purchase_price AS 'PURCHASE PRICE', supplier AS 'SUPPLIER', manufacture_date AS 'MANUFACTURE DATE', barcode AS 'BARCODE' FROM medicaments_information";
+
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     DataTable table = new DataTable();
