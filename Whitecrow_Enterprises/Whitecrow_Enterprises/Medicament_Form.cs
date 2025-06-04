@@ -58,7 +58,7 @@ namespace Whitecrow_Enterprises
                 try
                 {
                     conn.Open();
-                    string query = @"SELECT generic_name AS 'GENERIC NAME', brand AS 'BRAND', dosage AS 'DOSAGE', unit AS 'UNIT', 
+                    string query = @"SELECT generic_name AS 'GENERIC NAME', brand AS 'BRAND', dosage AS 'DOSAGE', 
                             expiry_date AS 'EXPIRY DATE', stock AS 'STOCK', selling_price AS 'SELLING PRICE', 
                             purchase_price AS 'PURCHASE PRICE', supplier AS 'SUPPLIER', manufacture_date AS 'MANUFACTURE DATE', 
                             barcode AS 'BARCODE' 
@@ -160,11 +160,62 @@ namespace Whitecrow_Enterprises
         private DataTable dt = new DataTable();
 
 
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Get selected row
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
+            // Assuming 'BARCODE' column is your unique identifier
+            string generic_name = selectedRow.Cells["GENERIC NAME"].Value?.ToString();
 
+            if (string.IsNullOrEmpty(generic_name))
+            {
+                MessageBox.Show("Cannot delete item: Invalid selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            DialogResult confirm = MessageBox.Show($"Are you sure you want to delete: {generic_name}?",
+                                                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (confirm == DialogResult.Yes)
+            {
+                string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
 
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string deleteQuery = "DELETE FROM medicaments_information WHERE generic_name = @generic_name";
+
+                        using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@generic_name", generic_name);
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Item deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadDataToGrid(); // Refresh the grid
+                            }
+                            else
+                            {
+                                MessageBox.Show("Item could not be found or deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

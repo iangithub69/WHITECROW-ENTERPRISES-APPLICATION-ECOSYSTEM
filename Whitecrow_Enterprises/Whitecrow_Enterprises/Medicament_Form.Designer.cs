@@ -45,6 +45,7 @@
             header_label = new Label();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
+            report_button = new Button();
             root_panel.SuspendLayout();
             searchbox_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -54,6 +55,7 @@
             // 
             // root_panel
             // 
+            root_panel.Controls.Add(report_button);
             root_panel.Controls.Add(delete_button);
             root_panel.Controls.Add(restock_button);
             root_panel.Controls.Add(edit_button);
@@ -76,12 +78,13 @@
             delete_button.FlatStyle = FlatStyle.Flat;
             delete_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             delete_button.ForeColor = Color.Red;
-            delete_button.Location = new Point(1613, 1449);
+            delete_button.Location = new Point(2039, 1449);
             delete_button.Name = "delete_button";
             delete_button.Size = new Size(327, 91);
             delete_button.TabIndex = 11;
             delete_button.Text = "Delete";
             delete_button.UseVisualStyleBackColor = false;
+            delete_button.Click += delete_button_Click;
             // 
             // restock_button
             // 
@@ -235,6 +238,19 @@
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // report_button
+            // 
+            report_button.BackColor = SystemColors.ButtonFace;
+            report_button.FlatStyle = FlatStyle.Flat;
+            report_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            report_button.ForeColor = Color.FromArgb(205, 153, 47);
+            report_button.Location = new Point(1640, 1449);
+            report_button.Name = "report_button";
+            report_button.Size = new Size(327, 91);
+            report_button.TabIndex = 13;
+            report_button.Text = "Report";
+            report_button.UseVisualStyleBackColor = false;
+            // 
             // Medicament_Form
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -270,5 +286,6 @@
         private Button edit_button;
         private Button add_button;
         private Panel panel1;
+        private Button report_button;
     }
 }
