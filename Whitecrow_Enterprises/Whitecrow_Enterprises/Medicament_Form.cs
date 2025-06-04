@@ -96,5 +96,19 @@ namespace Whitecrow_Enterprises
         {
 
         }
+
+        private void searchbox_textbox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+
+     
+
+
+
+
+
+
     }
 }
