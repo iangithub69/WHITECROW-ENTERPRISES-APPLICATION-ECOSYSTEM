@@ -44,7 +44,10 @@ namespace Whitecrow_Enterprises
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             // Optional: Adjust rows to fit content (especially if you have multiline text)
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+
         }
+
 
         private void LoadDataToGrid()
         {
@@ -55,14 +58,20 @@ namespace Whitecrow_Enterprises
                 try
                 {
                     conn.Open();
-                    string query = "SELECT generic_name AS 'GENERIC NAME', brand AS 'BRAND', dosage AS 'DOSAGE', unit AS 'UNIT', expiry_date AS 'EXPIRY DATE', stock AS 'STOCK', selling_price AS 'SELLING PRICE', purchase_price AS 'PURCHASE PRICE', supplier AS 'SUPPLIER', manufacture_date AS 'MANUFACTURE DATE', barcode AS 'BARCODE' FROM medicaments_information";
-
+                    string query = @"SELECT generic_name AS 'GENERIC NAME', brand AS 'BRAND', dosage AS 'DOSAGE', unit AS 'UNIT', 
+                            expiry_date AS 'EXPIRY DATE', stock AS 'STOCK', selling_price AS 'SELLING PRICE', 
+                            purchase_price AS 'PURCHASE PRICE', supplier AS 'SUPPLIER', manufacture_date AS 'MANUFACTURE DATE', 
+                            barcode AS 'BARCODE' 
+                            FROM medicaments_information
+                            ORDER BY generic_name ASC";
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
 
-                    dataGridView1.DataSource = table;
+                    dt.Clear();
+                    adapter.Fill(dt);
+
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
                 }
                 catch (Exception ex)
                 {
@@ -70,6 +79,8 @@ namespace Whitecrow_Enterprises
                 }
             }
         }
+
+
 
 
 
@@ -100,11 +111,55 @@ namespace Whitecrow_Enterprises
 
         private void searchbox_textbox_TextChanged(object sender, EventArgs e)
         {
-            
+            string searchText = searchbox_textbox.Text.Trim().Replace("'", "''");
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                bs.RemoveFilter();
+
+                // Remove highlights when filter cleared
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                }
+                return;
+            }
+
+            // Build filter for string columns to match search text (case-insensitive)
+            List<string> filters = new List<string>();
+            foreach (DataColumn col in dt.Columns)
+            {
+                if (col.DataType == typeof(string))
+                {
+                    filters.Add($"[{col.ColumnName}] LIKE '%{searchText}%'");
+                }
+            }
+
+            string filterExpression = string.Join(" OR ", filters);
+            bs.Filter = filterExpression;
+
+            // Highlight matched cells/rows
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                bool isMatch = false;
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        isMatch = true;
+                        break;
+                    }
+                }
+
+                row.DefaultCellStyle.BackColor = isMatch ? Color.Yellow : Color.White;
+            }
         }
 
+        private BindingSource bs = new BindingSource();
+        private DataTable dt = new DataTable();
 
-     
+
 
 
 
