@@ -217,5 +217,14 @@ namespace Whitecrow_Enterprises
                 }
             }
         }
+
+        private void add_button_Click(object sender, EventArgs e)
+        {
+            Blurr_Form addForm = new Blurr_Form(); // Create instance
+            addForm.Show(); // Use ShowDialog() if you want to block the current form
+
+            Medicament_Add_Form addMedicamentForm = new Medicament_Add_Form(); // Create instance
+            addMedicamentForm.ShowDialog(); // Use ShowDialog() if you want to block the current form
+        }
     }
 }

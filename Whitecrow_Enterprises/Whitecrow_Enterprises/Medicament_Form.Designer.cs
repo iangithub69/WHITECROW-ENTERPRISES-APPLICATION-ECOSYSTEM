@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             root_panel = new Panel();
+            report_button = new Button();
             delete_button = new Button();
             restock_button = new Button();
             edit_button = new Button();
@@ -45,7 +46,6 @@
             header_label = new Label();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
-            report_button = new Button();
             root_panel.SuspendLayout();
             searchbox_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,6 +71,19 @@
             root_panel.Name = "root_panel";
             root_panel.Size = new Size(2401, 1567);
             root_panel.TabIndex = 0;
+            // 
+            // report_button
+            // 
+            report_button.BackColor = SystemColors.ButtonFace;
+            report_button.FlatStyle = FlatStyle.Flat;
+            report_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            report_button.ForeColor = Color.FromArgb(205, 153, 47);
+            report_button.Location = new Point(1640, 1449);
+            report_button.Name = "report_button";
+            report_button.Size = new Size(327, 91);
+            report_button.TabIndex = 13;
+            report_button.Text = "Report";
+            report_button.UseVisualStyleBackColor = false;
             // 
             // delete_button
             // 
@@ -125,13 +138,14 @@
             add_button.TabIndex = 8;
             add_button.Text = "Add";
             add_button.UseVisualStyleBackColor = false;
+            add_button.Click += add_button_Click;
             // 
             // sell_button
             // 
-            sell_button.BackColor = SystemColors.ButtonFace;
+            sell_button.BackColor = Color.FromArgb(205, 153, 47);
             sell_button.FlatStyle = FlatStyle.Flat;
             sell_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            sell_button.ForeColor = Color.FromArgb(205, 153, 47);
+            sell_button.ForeColor = Color.White;
             sell_button.Location = new Point(59, 1449);
             sell_button.Name = "sell_button";
             sell_button.Size = new Size(327, 91);
@@ -237,19 +251,6 @@
             dataGridView1.Size = new Size(2307, 1195);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // report_button
-            // 
-            report_button.BackColor = SystemColors.ButtonFace;
-            report_button.FlatStyle = FlatStyle.Flat;
-            report_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            report_button.ForeColor = Color.FromArgb(205, 153, 47);
-            report_button.Location = new Point(1640, 1449);
-            report_button.Name = "report_button";
-            report_button.Size = new Size(327, 91);
-            report_button.TabIndex = 13;
-            report_button.Text = "Report";
-            report_button.UseVisualStyleBackColor = false;
             // 
             // Medicament_Form
             // 
