@@ -334,6 +334,7 @@
             save_button.TabIndex = 7;
             save_button.Text = "Save";
             save_button.UseVisualStyleBackColor = false;
+            save_button.Click += save_button_Click;
             // 
             // header_label
             // 

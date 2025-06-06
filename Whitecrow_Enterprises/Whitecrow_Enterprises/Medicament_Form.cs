@@ -145,7 +145,8 @@ namespace Whitecrow_Enterprises
 
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.Value != null && cell.Value.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    var cellText = cell.Value?.ToString();
+                    if (!string.IsNullOrEmpty(cellText) && cellText.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
                     {
                         isMatch = true;
                         break;
@@ -154,6 +155,7 @@ namespace Whitecrow_Enterprises
 
                 row.DefaultCellStyle.BackColor = isMatch ? Color.Yellow : Color.White;
             }
+
         }
 
         private BindingSource bs = new BindingSource();
@@ -168,11 +170,29 @@ namespace Whitecrow_Enterprises
                 return;
             }
 
+            // Ask for password
+            string inputPassword = Microsoft.VisualBasic.Interaction.InputBox(
+                "Enter password to confirm deletion:",
+                "Password Required",
+                "",
+                -1, -1
+            );
+
+            if (string.IsNullOrEmpty(inputPassword))
+            {
+                // Cancelled or left blank
+                return;
+            }
+
+            if (inputPassword != "password123") // 🔐 Replace with your password
+            {
+                MessageBox.Show("Incorrect password. Deletion canceled.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Get selected row
             DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-            // Assuming 'BARCODE' column is your unique identifier
-            string generic_name = selectedRow.Cells["GENERIC NAME"].Value?.ToString();
+            string generic_name = selectedRow.Cells["GENERIC NAME"]?.Value?.ToString() ?? string.Empty;
 
             if (string.IsNullOrEmpty(generic_name))
             {
@@ -218,6 +238,10 @@ namespace Whitecrow_Enterprises
             }
         }
 
+
+
+
+
         private void add_button_Click(object sender, EventArgs e)
         {
             Blurr_Form addForm = new Blurr_Form(); // Create instance
@@ -225,6 +249,11 @@ namespace Whitecrow_Enterprises
 
             Medicament_Add_Form addMedicamentForm = new Medicament_Add_Form(); // Create instance
             addMedicamentForm.ShowDialog(); // Use ShowDialog() if you want to block the current form
+        }
+
+        private void root_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

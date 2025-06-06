@@ -42,7 +42,7 @@ namespace Whitecrow_Enterprises
             }
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object? sender, EventArgs e)
         {
             if (isFadingIn)
             {

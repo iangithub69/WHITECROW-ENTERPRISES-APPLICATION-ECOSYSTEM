@@ -39,7 +39,14 @@ namespace Whitecrow_Enterprises
             purchase_price_tb.KeyPress += purchase_price_tb_KeyPress;
             stock_quantity_tb.KeyPress += stock_quantity_tb_KeyPress;
 
-
+            ClearHighlightOnInput(generic_name_tb);
+            ClearHighlightOnInput(brand_name_tb);
+            ClearHighlightOnInput(dosage_form_cb);
+            ClearHighlightOnInput(stock_quantity_tb);
+            ClearHighlightOnInput(selling_price_tb);
+            ClearHighlightOnInput(purchase_price_tb);
+            ClearHighlightOnInput(supplier_tb);
+            ClearHighlightOnInput(barcode_tb);
         }
 
         private void LoadDosageFormValues()
@@ -257,13 +264,138 @@ namespace Whitecrow_Enterprises
             }
         }
 
+        private void ClearHighlightOnInput(Control ctrl)
+        {
+            if (ctrl is TextBox tb)
+            {
+                tb.TextChanged += (s, e) =>
+                {
+                    if (tb.BackColor == Color.LightPink)
+                        tb.BackColor = Color.White;
+                };
+            }
+            else if (ctrl is ComboBox cb)
+            {
+                cb.SelectedIndexChanged += (s, e) =>
+                {
+                    if (cb.BackColor == Color.LightPink)
+                        cb.BackColor = Color.White;
+                };
+                cb.TextChanged += (s, e) =>
+                {
+                    if (cb.BackColor == Color.LightPink)
+                        cb.BackColor = Color.White;
+                };
+            }
+        }
 
 
+        private void save_button_Click(object sender, EventArgs e)
+        {
+            bool hasError = false;
 
+            // Helper method to check a Control (TextBox or ComboBox)
+            void CheckRequired(Control ctrl)
+            {
+                if (string.IsNullOrWhiteSpace(ctrl.Text))
+                {
+                    ctrl.BackColor = Color.LightPink;
+                    hasError = true;
+                }
+                else
+                {
+                    ctrl.BackColor = Color.White;
+                }
+            }
 
+            // Check required fields and highlight empty ones
+            CheckRequired(generic_name_tb);
+            CheckRequired(brand_name_tb);
+            CheckRequired(dosage_form_cb);
+            CheckRequired(stock_quantity_tb);
+            CheckRequired(selling_price_tb);
+            CheckRequired(purchase_price_tb);
+            CheckRequired(supplier_tb);
+            CheckRequired(barcode_tb);
 
+            if (hasError)
+            {
+                MessageBox.Show("Please fill in all required fields (highlighted in pink).", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Stop saving
+            }
 
+            // Validate numeric fields and highlight errors
+            if (!int.TryParse(stock_quantity_tb.Text, out _))
+            {
+                stock_quantity_tb.BackColor = Color.LightPink;
+                MessageBox.Show("Stock must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                stock_quantity_tb.BackColor = Color.White;
+            }
 
+            if (!decimal.TryParse(selling_price_tb.Text, out _))
+            {
+                selling_price_tb.BackColor = Color.LightPink;
+                MessageBox.Show("Selling Price must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                selling_price_tb.BackColor = Color.White;
+            }
 
+            if (!decimal.TryParse(purchase_price_tb.Text, out _))
+            {
+                purchase_price_tb.BackColor = Color.LightPink;
+                MessageBox.Show("Purchase Price must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                purchase_price_tb.BackColor = Color.White;
+            }
+
+            string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = @"INSERT INTO medicaments_information 
+                (generic_name, brand, dosage, expiry_date, stock, selling_price, purchase_price, supplier, manufacture_date, barcode) 
+                VALUES (@generic_name, @brand, @dosage, @expiry_date, @stock, @selling_price, @purchase_price, @supplier, @manufacture_date, @barcode)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@generic_name", generic_name_tb.Text);
+                        cmd.Parameters.AddWithValue("@brand", brand_name_tb.Text);
+                        cmd.Parameters.AddWithValue("@dosage", dosage_form_cb.Text);
+                        cmd.Parameters.AddWithValue("@expiry_date", expiry_datepicker.Value.ToString("MMMM, yyyy"));
+                        cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock_quantity_tb.Text));
+                        cmd.Parameters.AddWithValue("@selling_price", Convert.ToDecimal(selling_price_tb.Text));
+                        cmd.Parameters.AddWithValue("@purchase_price", Convert.ToDecimal(purchase_price_tb.Text));
+                        cmd.Parameters.AddWithValue("@supplier", supplier_tb.Text);
+                        cmd.Parameters.AddWithValue("@manufacture_date", manufacture_datepicker.Value.ToString("MMMM, yyyy"));
+                        cmd.Parameters.AddWithValue("@barcode", barcode_tb.Text);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                            MessageBox.Show("Medicament saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show("Failed to save medicament.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

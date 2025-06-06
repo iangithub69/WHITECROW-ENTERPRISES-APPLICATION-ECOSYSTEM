@@ -71,6 +71,7 @@
             root_panel.Name = "root_panel";
             root_panel.Size = new Size(2401, 1567);
             root_panel.TabIndex = 0;
+            root_panel.Paint += root_panel_Paint;
             // 
             // report_button
             // 
