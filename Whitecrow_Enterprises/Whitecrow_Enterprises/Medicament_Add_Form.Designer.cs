@@ -140,6 +140,7 @@
             purchase_price_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             purchase_price_tb.Location = new Point(794, 470);
             purchase_price_tb.Name = "purchase_price_tb";
+            purchase_price_tb.PlaceholderText = " ₱ 00.00";
             purchase_price_tb.Size = new Size(596, 50);
             purchase_price_tb.TabIndex = 32;
             // 
@@ -149,6 +150,7 @@
             selling_price_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             selling_price_tb.Location = new Point(109, 470);
             selling_price_tb.Name = "selling_price_tb";
+            selling_price_tb.PlaceholderText = " ₱ 00.00";
             selling_price_tb.Size = new Size(596, 50);
             selling_price_tb.TabIndex = 31;
             // 
@@ -160,15 +162,18 @@
             stock_quantity_tb.Name = "stock_quantity_tb";
             stock_quantity_tb.Size = new Size(596, 50);
             stock_quantity_tb.TabIndex = 30;
+            stock_quantity_tb.TextChanged += stock_quantity_tb_TextChanged;
             // 
             // dosage_form_cb
             // 
+            dosage_form_cb.DropDownStyle = ComboBoxStyle.DropDownList;
             dosage_form_cb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dosage_form_cb.FormattingEnabled = true;
             dosage_form_cb.Location = new Point(109, 358);
             dosage_form_cb.Name = "dosage_form_cb";
             dosage_form_cb.Size = new Size(596, 53);
             dosage_form_cb.TabIndex = 29;
+            dosage_form_cb.SelectedIndexChanged += dosage_form_cb_SelectedIndexChanged;
             // 
             // label10
             // 
@@ -315,6 +320,7 @@
             clear_button.TabIndex = 9;
             clear_button.Text = "Clear";
             clear_button.UseVisualStyleBackColor = false;
+            clear_button.Click += clear_button_Click;
             // 
             // save_button
             // 

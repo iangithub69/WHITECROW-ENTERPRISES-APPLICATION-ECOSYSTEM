@@ -168,6 +168,7 @@
             searchbox_textbox.Font = new Font("Segoe UI Semibold", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchbox_textbox.Location = new Point(3, 3);
             searchbox_textbox.Name = "searchbox_textbox";
+            searchbox_textbox.PlaceholderText = " Search Here...";
             searchbox_textbox.Size = new Size(1158, 50);
             searchbox_textbox.TabIndex = 2;
             searchbox_textbox.TextChanged += searchbox_textbox_TextChanged;
