@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization; 
 
 namespace Whitecrow_Enterprises
 {
@@ -17,7 +18,13 @@ namespace Whitecrow_Enterprises
         {
             InitializeComponent();
 
+            // Add handlers only to specific TextBoxes
+            generic_name_tb.TextChanged += CapitalizeEachWord;
 
+            expiry_datepicker.Format = DateTimePickerFormat.Custom;
+            expiry_datepicker.CustomFormat = "MMMM, yyyy";
+            manufacture_datepicker.Format = DateTimePickerFormat.Custom;
+            manufacture_datepicker.CustomFormat = "MMMM, yyyy";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -51,6 +58,35 @@ namespace Whitecrow_Enterprises
                     break;
                 }
             }
+        }
+
+        private void CapitalizeEachWord(object? sender, EventArgs e)
+        {
+            if (sender is not TextBox tb || string.IsNullOrEmpty(tb.Text))
+                return;
+
+            int selStart = tb.SelectionStart;
+
+            string converted = System.Globalization.CultureInfo.CurrentCulture.TextInfo
+                .ToTitleCase(tb.Text.ToLower());
+
+            if (tb.Text != converted)
+            {
+                tb.Text = converted;
+                tb.SelectionStart = selStart;
+            }
+        }
+
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void expiry_datepicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
