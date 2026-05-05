@@ -21,31 +21,34 @@ namespace Whitecrow_Enterprises
             InitializeComponent();
 
             // Add handlers only to specific TextBoxes
-            generic_name_tb.TextChanged += CapitalizeEachWord;
-            brand_name_tb.TextChanged += CapitalizeEachWord;
-            supplier_tb.TextChanged += CapitalizeEachWord;
+            quantity_tb.TextChanged += CapitalizeEachWord;
+
+            genericname_tb.TextChanged += CapitalizeEachWord;
 
             expiry_datepicker.Format = DateTimePickerFormat.Custom;
             expiry_datepicker.CustomFormat = "MMMM, yyyy";
-            manufacture_datepicker.Format = DateTimePickerFormat.Custom;
-            manufacture_datepicker.CustomFormat = "MMMM, yyyy";
+
 
             LoadDosageFormValues(); // ✅ Call here
+            LoadUnitValues();
+            ComputeTotal();
+            quantity_tb.TextChanged += quantity_tb_TextChanged;
+            unitprice_tb.TextChanged += unitprice_tb_TextChanged;
 
             SetupBrandAutoComplete();
             SetupGenericNameAutoComplete();
 
-            selling_price_tb.KeyPress += selling_price_tb_KeyPress;
-            purchase_price_tb.KeyPress += purchase_price_tb_KeyPress;
-            stock_quantity_tb.KeyPress += stock_quantity_tb_KeyPress;
+            unitprice_tb.KeyPress += selling_price_tb_KeyPress;
 
-            ClearHighlightOnInput(generic_name_tb);
-            ClearHighlightOnInput(brand_name_tb);
+
+
+            ClearHighlightOnInput(quantity_tb);
+
             ClearHighlightOnInput(dosage_form_cb);
-            ClearHighlightOnInput(stock_quantity_tb);
-            ClearHighlightOnInput(selling_price_tb);
-            ClearHighlightOnInput(purchase_price_tb);
-            ClearHighlightOnInput(supplier_tb);
+
+            ClearHighlightOnInput(unitprice_tb);
+
+            ClearHighlightOnInput(genericname_tb);
             ClearHighlightOnInput(barcode_tb);
         }
 
@@ -71,6 +74,40 @@ namespace Whitecrow_Enterprises
                             if (!string.IsNullOrWhiteSpace(name))
                             {
                                 dosage_form_cb.Items.Add(name);
+                            }
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading dosage forms: " + ex.Message);
+                }
+            }
+        }
+
+        private void LoadUnitValues()
+        {
+            string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT unit_name FROM units ORDER BY unit_name ASC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        unit_cb.Items.Clear(); // Clear existing items first
+
+                        while (reader.Read())
+                        {
+                            string name = reader["unit_name"]?.ToString() ?? "";
+                            if (!string.IsNullOrWhiteSpace(name))
+                            {
+                                unit_cb.Items.Add(name);
                             }
 
                         }
@@ -136,12 +173,6 @@ namespace Whitecrow_Enterprises
         }
 
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void expiry_datepicker_ValueChanged(object sender, EventArgs e)
         {
 
@@ -165,9 +196,7 @@ namespace Whitecrow_Enterprises
         "Flixotide", "Lexapro", "Diflucan"
             });
 
-            brand_name_tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            brand_name_tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            brand_name_tb.AutoCompleteCustomSource = brandList;
+
         }
 
 
@@ -186,9 +215,9 @@ namespace Whitecrow_Enterprises
         "Escitalopram", "Fluconazole"
             });
 
-            generic_name_tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            generic_name_tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            generic_name_tb.AutoCompleteCustomSource = genericList;
+            quantity_tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            quantity_tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            quantity_tb.AutoCompleteCustomSource = genericList;
         }
 
         private void stock_quantity_tb_TextChanged(object sender, EventArgs e)
@@ -210,19 +239,7 @@ namespace Whitecrow_Enterprises
             e.Handled = true;
         }
 
-        private void purchase_price_tb_KeyPress(object? sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar))
-                return;
 
-            if (char.IsDigit(e.KeyChar))
-                return;
-
-            if (e.KeyChar == '.' && !((sender as TextBox)?.Text.Contains('.') ?? true))
-                return;
-
-            e.Handled = true;
-        }
 
         private void stock_quantity_tb_KeyPress(object? sender, KeyPressEventArgs e)
         {
@@ -309,14 +326,15 @@ namespace Whitecrow_Enterprises
             }
 
             // Check required fields and highlight empty ones
-            CheckRequired(generic_name_tb);
-            CheckRequired(brand_name_tb);
+            CheckRequired(quantity_tb);
+            CheckRequired(unit_cb);
+            CheckRequired(genericname_tb);
             CheckRequired(dosage_form_cb);
-            CheckRequired(stock_quantity_tb);
-            CheckRequired(selling_price_tb);
-            CheckRequired(purchase_price_tb);
-            CheckRequired(supplier_tb);
+            CheckRequired(brandname_tb);
             CheckRequired(barcode_tb);
+            CheckRequired(expiry_datepicker);
+            CheckRequired(unitprice_tb);
+            CheckRequired(supplier_tb);
 
             if (hasError)
             {
@@ -324,39 +342,7 @@ namespace Whitecrow_Enterprises
                 return; // Stop saving
             }
 
-            // Validate numeric fields and highlight errors
-            if (!int.TryParse(stock_quantity_tb.Text, out _))
-            {
-                stock_quantity_tb.BackColor = Color.LightPink;
-                MessageBox.Show("Stock must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                stock_quantity_tb.BackColor = Color.White;
-            }
 
-            if (!decimal.TryParse(selling_price_tb.Text, out _))
-            {
-                selling_price_tb.BackColor = Color.LightPink;
-                MessageBox.Show("Selling Price must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                selling_price_tb.BackColor = Color.White;
-            }
-
-            if (!decimal.TryParse(purchase_price_tb.Text, out _))
-            {
-                purchase_price_tb.BackColor = Color.LightPink;
-                MessageBox.Show("Purchase Price must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                purchase_price_tb.BackColor = Color.White;
-            }
 
             string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
 
@@ -367,35 +353,38 @@ namespace Whitecrow_Enterprises
                     conn.Open();
 
                     string query = @"INSERT INTO medicaments_information 
-                (generic_name, brand, dosage, expiry_date, stock, selling_price, purchase_price, supplier, manufacture_date, barcode) 
-                VALUES (@generic_name, @brand, @dosage, @expiry_date, @stock, @selling_price, @purchase_price, @supplier, @manufacture_date, @barcode)";
+        (quantity, unit, generic_name, dosage, brand_name, barcode, expiry_date, unit_price, supplier) 
+        VALUES 
+        (@quantity, @unit, @generic_name, @dosage, @brand_name, @barcode, @expiry_date, @unit_price, @supplier)";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@generic_name", generic_name_tb.Text);
-                        cmd.Parameters.AddWithValue("@brand", brand_name_tb.Text);
+                        cmd.Parameters.AddWithValue("@quantity", Convert.ToInt32(quantity_tb.Text));
+                        cmd.Parameters.AddWithValue("@unit", unit_cb.Text);
+                        cmd.Parameters.AddWithValue("@generic_name", genericname_tb.Text);
                         cmd.Parameters.AddWithValue("@dosage", dosage_form_cb.Text);
-                        cmd.Parameters.AddWithValue("@expiry_date", expiry_datepicker.Value.ToString("MMMM, yyyy"));
-                        cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock_quantity_tb.Text));
-                        cmd.Parameters.AddWithValue("@selling_price", Convert.ToDecimal(selling_price_tb.Text));
-                        cmd.Parameters.AddWithValue("@purchase_price", Convert.ToDecimal(purchase_price_tb.Text));
-                        cmd.Parameters.AddWithValue("@supplier", supplier_tb.Text);
-                        cmd.Parameters.AddWithValue("@manufacture_date", manufacture_datepicker.Value.ToString("MMMM, yyyy"));
+                        cmd.Parameters.AddWithValue("@brand_name", brandname_tb.Text);
                         cmd.Parameters.AddWithValue("@barcode", barcode_tb.Text);
+                        cmd.Parameters.AddWithValue("@expiry_date", expiry_datepicker.Value.ToString("yyyy-MMMM-dd"));
+                        cmd.Parameters.AddWithValue("@unit_price", Convert.ToDecimal(unitprice_tb.Text));
+                        cmd.Parameters.AddWithValue("@supplier", supplier_tb.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
-                            MessageBox.Show("Medicament saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Medicament saved successfully!");
                         else
-                            MessageBox.Show("Failed to save medicament.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Failed to save medicament.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Database error:\n" + ex.Message);
                 }
             }
+
+            ClearForm();
+
         }
 
         private void barcode_tb_TextChanged(object sender, EventArgs e)
@@ -403,9 +392,71 @@ namespace Whitecrow_Enterprises
 
         }
 
+
         private void selling_price_tb_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void ComputeTotal()
+        {
+            decimal quantity = 0;
+            decimal unitPrice = 0;
+
+            decimal.TryParse(quantity_tb.Text, out quantity);
+            decimal.TryParse(unitprice_tb.Text, out unitPrice);
+
+            decimal total = quantity * unitPrice;
+
+            total_lbl.Text = total.ToString("N2"); // formatted (e.g., 1,234.00)
+        }
+
+        private void quantity_tb_TextChanged(object? sender, EventArgs e)
+        {
+            ComputeTotal();
+        }
+
+        private void unitprice_tb_TextChanged(object? sender, EventArgs e)
+        {
+            ComputeTotal();
+        }
+
+        private void quantity_tb_Leave(object? sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(quantity_tb.Text))
+            {
+                quantity_tb.Text = "0";
+            }
+        }
+
+        private void ClearForm()
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox tb)
+                    tb.Clear();
+
+                if (c is ComboBox cb)
+                    cb.SelectedIndex = -1;
+            }
+
+            ClearControlsRecursive(this);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

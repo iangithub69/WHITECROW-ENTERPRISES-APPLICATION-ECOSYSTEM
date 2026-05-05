@@ -58,10 +58,7 @@ namespace Whitecrow_Enterprises
                 try
                 {
                     conn.Open();
-                    string query = @"SELECT generic_name AS 'GENERIC NAME', brand AS 'BRAND', dosage AS 'DOSAGE', 
-                            expiry_date AS 'EXPIRY DATE', stock AS 'STOCK', selling_price AS 'SELLING PRICE', 
-                            purchase_price AS 'PURCHASE PRICE', supplier AS 'SUPPLIER', manufacture_date AS 'MANUFACTURE DATE', 
-                            barcode AS 'BARCODE' 
+                    string query = @"SELECT quantity AS 'QUANTITY', unit AS 'UNIT', generic_name AS 'GENERIC NAME', dosage AS 'DOSAGE', brand_name AS 'BRAND NAME', barcode AS 'LOT NO.', expiry_date as 'EXPIRY DATE', unit_price AS 'UNIT PRICE', supplier AS 'SUPPLIER'  
                             FROM medicaments_information
                             ORDER BY generic_name ASC";
 

@@ -1,4 +1,5 @@
-﻿namespace Whitecrow_Enterprises
+﻿
+namespace Whitecrow_Enterprises
 {
     partial class Medicament_Add_Form
     {
@@ -30,26 +31,26 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            barcode_tb = new TextBox();
-            supplier_tb = new TextBox();
-            manufacture_datepicker = new DateTimePicker();
-            expiry_datepicker = new DateTimePicker();
-            purchase_price_tb = new TextBox();
-            selling_price_tb = new TextBox();
-            stock_quantity_tb = new TextBox();
-            dosage_form_cb = new ComboBox();
+            unit_cb = new ComboBox();
+            total_lbl = new Label();
             label10 = new Label();
+            supplier_tb = new TextBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
+            barcode_tb = new TextBox();
+            genericname_tb = new TextBox();
+            expiry_datepicker = new DateTimePicker();
+            unitprice_tb = new TextBox();
+            brandname_tb = new TextBox();
+            dosage_form_cb = new ComboBox();
             label3 = new Label();
-            brand_name_tb = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            generic_name_tb = new TextBox();
+            quantity_tb = new TextBox();
             cancel_button = new Button();
             clear_button = new Button();
             save_button = new Button();
@@ -64,26 +65,26 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(barcode_tb);
-            panel1.Controls.Add(supplier_tb);
-            panel1.Controls.Add(manufacture_datepicker);
-            panel1.Controls.Add(expiry_datepicker);
-            panel1.Controls.Add(purchase_price_tb);
-            panel1.Controls.Add(selling_price_tb);
-            panel1.Controls.Add(stock_quantity_tb);
-            panel1.Controls.Add(dosage_form_cb);
+            panel1.Controls.Add(unit_cb);
+            panel1.Controls.Add(total_lbl);
             panel1.Controls.Add(label10);
+            panel1.Controls.Add(supplier_tb);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
+            panel1.Controls.Add(barcode_tb);
+            panel1.Controls.Add(genericname_tb);
+            panel1.Controls.Add(expiry_datepicker);
+            panel1.Controls.Add(unitprice_tb);
+            panel1.Controls.Add(brandname_tb);
+            panel1.Controls.Add(dosage_form_cb);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(brand_name_tb);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(generic_name_tb);
+            panel1.Controls.Add(quantity_tb);
             panel1.Controls.Add(cancel_button);
             panel1.Controls.Add(clear_button);
             panel1.Controls.Add(save_button);
@@ -99,145 +100,94 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // barcode_tb
+            // unit_cb
             // 
-            barcode_tb.BorderStyle = BorderStyle.FixedSingle;
-            barcode_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            barcode_tb.Location = new Point(794, 691);
-            barcode_tb.Name = "barcode_tb";
-            barcode_tb.Size = new Size(596, 50);
-            barcode_tb.TabIndex = 36;
-            barcode_tb.TextChanged += barcode_tb_TextChanged;
+            unit_cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            unit_cb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            unit_cb.FormattingEnabled = true;
+            unit_cb.Location = new Point(794, 247);
+            unit_cb.Name = "unit_cb";
+            unit_cb.Size = new Size(596, 53);
+            unit_cb.TabIndex = 45;
             // 
-            // supplier_tb
+            // total_lbl
             // 
-            supplier_tb.BorderStyle = BorderStyle.FixedSingle;
-            supplier_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            supplier_tb.Location = new Point(109, 691);
-            supplier_tb.Name = "supplier_tb";
-            supplier_tb.Size = new Size(596, 50);
-            supplier_tb.TabIndex = 35;
-            // 
-            // manufacture_datepicker
-            // 
-            manufacture_datepicker.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            manufacture_datepicker.Location = new Point(794, 580);
-            manufacture_datepicker.Name = "manufacture_datepicker";
-            manufacture_datepicker.Size = new Size(596, 50);
-            manufacture_datepicker.TabIndex = 34;
-            manufacture_datepicker.Visible = false;
-            // 
-            // expiry_datepicker
-            // 
-            expiry_datepicker.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            expiry_datepicker.Location = new Point(109, 580);
-            expiry_datepicker.Name = "expiry_datepicker";
-            expiry_datepicker.Size = new Size(596, 50);
-            expiry_datepicker.TabIndex = 33;
-            expiry_datepicker.ValueChanged += expiry_datepicker_ValueChanged;
-            // 
-            // purchase_price_tb
-            // 
-            purchase_price_tb.BorderStyle = BorderStyle.FixedSingle;
-            purchase_price_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            purchase_price_tb.Location = new Point(794, 470);
-            purchase_price_tb.Name = "purchase_price_tb";
-            purchase_price_tb.PlaceholderText = " ₱ 00.00";
-            purchase_price_tb.Size = new Size(596, 50);
-            purchase_price_tb.TabIndex = 32;
-            // 
-            // selling_price_tb
-            // 
-            selling_price_tb.BorderStyle = BorderStyle.FixedSingle;
-            selling_price_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            selling_price_tb.Location = new Point(109, 470);
-            selling_price_tb.Name = "selling_price_tb";
-            selling_price_tb.PlaceholderText = " ₱ 00.00";
-            selling_price_tb.Size = new Size(596, 50);
-            selling_price_tb.TabIndex = 31;
-            selling_price_tb.TextChanged += selling_price_tb_TextChanged;
-            // 
-            // stock_quantity_tb
-            // 
-            stock_quantity_tb.BorderStyle = BorderStyle.FixedSingle;
-            stock_quantity_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            stock_quantity_tb.Location = new Point(794, 361);
-            stock_quantity_tb.Name = "stock_quantity_tb";
-            stock_quantity_tb.Size = new Size(596, 50);
-            stock_quantity_tb.TabIndex = 30;
-            stock_quantity_tb.TextChanged += stock_quantity_tb_TextChanged;
-            // 
-            // dosage_form_cb
-            // 
-            dosage_form_cb.DropDownStyle = ComboBoxStyle.DropDownList;
-            dosage_form_cb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dosage_form_cb.FormattingEnabled = true;
-            dosage_form_cb.Location = new Point(109, 358);
-            dosage_form_cb.Name = "dosage_form_cb";
-            dosage_form_cb.Size = new Size(596, 53);
-            dosage_form_cb.TabIndex = 29;
-            dosage_form_cb.SelectedIndexChanged += dosage_form_cb_SelectedIndexChanged;
+            total_lbl.AutoSize = true;
+            total_lbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            total_lbl.Location = new Point(1016, 699);
+            total_lbl.Name = "total_lbl";
+            total_lbl.Size = new Size(29, 45);
+            total_lbl.TabIndex = 44;
+            total_lbl.Text = ".";
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(794, 643);
+            label10.Location = new Point(794, 697);
             label10.Name = "label10";
-            label10.Size = new Size(135, 45);
-            label10.TabIndex = 28;
-            label10.Text = "Barcode";
+            label10.Size = new Size(231, 45);
+            label10.TabIndex = 43;
+            label10.Text = "Total Purchase:";
+            // 
+            // supplier_tb
+            // 
+            supplier_tb.BorderStyle = BorderStyle.FixedSingle;
+            supplier_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            supplier_tb.Location = new Point(109, 697);
+            supplier_tb.Name = "supplier_tb";
+            supplier_tb.Size = new Size(596, 50);
+            supplier_tb.TabIndex = 9;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(109, 643);
+            label9.Location = new Point(109, 649);
             label9.Name = "label9";
             label9.Size = new Size(137, 45);
-            label9.TabIndex = 27;
+            label9.TabIndex = 41;
             label9.Text = "Supplier";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(794, 532);
+            label8.Location = new Point(794, 538);
             label8.Name = "label8";
-            label8.Size = new Size(274, 45);
-            label8.TabIndex = 24;
-            label8.Text = "Manufacture Date";
-            label8.Visible = false;
+            label8.Size = new Size(157, 45);
+            label8.TabIndex = 40;
+            label8.Text = "Unit Price";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(109, 532);
+            label7.Location = new Point(109, 538);
             label7.Name = "label7";
             label7.Size = new Size(179, 45);
-            label7.TabIndex = 23;
+            label7.TabIndex = 39;
             label7.Text = "Expiry Date";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(794, 422);
+            label6.Location = new Point(794, 426);
             label6.Name = "label6";
-            label6.Size = new Size(225, 45);
-            label6.TabIndex = 20;
-            label6.Text = "Purchase Price";
+            label6.Size = new Size(124, 45);
+            label6.TabIndex = 38;
+            label6.Text = "Lot No.";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(109, 422);
+            label5.Location = new Point(109, 426);
             label5.Name = "label5";
-            label5.Size = new Size(193, 45);
-            label5.TabIndex = 19;
-            label5.Text = "Selling Price";
+            label5.Size = new Size(196, 45);
+            label5.TabIndex = 37;
+            label5.Text = "Brand Name";
             // 
             // label4
             // 
@@ -245,9 +195,71 @@
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(794, 310);
             label4.Name = "label4";
-            label4.Size = new Size(227, 45);
-            label4.TabIndex = 16;
-            label4.Text = "Stock Quantity";
+            label4.Size = new Size(210, 45);
+            label4.TabIndex = 36;
+            label4.Text = "Dosage Form";
+            // 
+            // barcode_tb
+            // 
+            barcode_tb.BorderStyle = BorderStyle.FixedSingle;
+            barcode_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            barcode_tb.Location = new Point(794, 474);
+            barcode_tb.Name = "barcode_tb";
+            barcode_tb.PlaceholderText = "Barcode";
+            barcode_tb.Size = new Size(596, 50);
+            barcode_tb.TabIndex = 6;
+            barcode_tb.TextChanged += barcode_tb_TextChanged;
+            // 
+            // genericname_tb
+            // 
+            genericname_tb.BorderStyle = BorderStyle.FixedSingle;
+            genericname_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            genericname_tb.Location = new Point(109, 361);
+            genericname_tb.Name = "genericname_tb";
+            genericname_tb.Size = new Size(596, 50);
+            genericname_tb.TabIndex = 3;
+            genericname_tb.TextChanged += supplier_tb_TextChanged;
+            // 
+            // expiry_datepicker
+            // 
+            expiry_datepicker.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            expiry_datepicker.Location = new Point(109, 586);
+            expiry_datepicker.Name = "expiry_datepicker";
+            expiry_datepicker.Size = new Size(596, 50);
+            expiry_datepicker.TabIndex = 7;
+            expiry_datepicker.ValueChanged += expiry_datepicker_ValueChanged;
+            // 
+            // unitprice_tb
+            // 
+            unitprice_tb.BorderStyle = BorderStyle.FixedSingle;
+            unitprice_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            unitprice_tb.Location = new Point(794, 586);
+            unitprice_tb.Name = "unitprice_tb";
+            unitprice_tb.PlaceholderText = " ₱ 00.00";
+            unitprice_tb.Size = new Size(596, 50);
+            unitprice_tb.TabIndex = 8;
+            unitprice_tb.TextChanged += selling_price_tb_TextChanged;
+            // 
+            // brandname_tb
+            // 
+            brandname_tb.BorderStyle = BorderStyle.FixedSingle;
+            brandname_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            brandname_tb.Location = new Point(109, 474);
+            brandname_tb.Name = "brandname_tb";
+            brandname_tb.Size = new Size(596, 50);
+            brandname_tb.TabIndex = 5;
+            brandname_tb.TextChanged += stock_quantity_tb_TextChanged;
+            // 
+            // dosage_form_cb
+            // 
+            dosage_form_cb.DropDownStyle = ComboBoxStyle.DropDownList;
+            dosage_form_cb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dosage_form_cb.FormattingEnabled = true;
+            dosage_form_cb.Location = new Point(794, 358);
+            dosage_form_cb.Name = "dosage_form_cb";
+            dosage_form_cb.Size = new Size(596, 53);
+            dosage_form_cb.TabIndex = 4;
+            dosage_form_cb.SelectedIndexChanged += dosage_form_cb_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -255,18 +267,9 @@
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(109, 310);
             label3.Name = "label3";
-            label3.Size = new Size(210, 45);
+            label3.Size = new Size(222, 45);
             label3.TabIndex = 15;
-            label3.Text = "Dosage Form";
-            // 
-            // brand_name_tb
-            // 
-            brand_name_tb.BorderStyle = BorderStyle.FixedSingle;
-            brand_name_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            brand_name_tb.Location = new Point(794, 247);
-            brand_name_tb.Name = "brand_name_tb";
-            brand_name_tb.Size = new Size(596, 50);
-            brand_name_tb.TabIndex = 14;
+            label3.Text = "Generic Name";
             // 
             // label2
             // 
@@ -274,9 +277,9 @@
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(794, 199);
             label2.Name = "label2";
-            label2.Size = new Size(196, 45);
+            label2.Size = new Size(79, 45);
             label2.TabIndex = 13;
-            label2.Text = "Brand Name";
+            label2.Text = "Unit";
             // 
             // label1
             // 
@@ -284,19 +287,18 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(109, 199);
             label1.Name = "label1";
-            label1.Size = new Size(222, 45);
+            label1.Size = new Size(141, 45);
             label1.TabIndex = 12;
-            label1.Text = "Generic Name";
+            label1.Text = "Quantity";
             // 
-            // generic_name_tb
+            // quantity_tb
             // 
-            generic_name_tb.BorderStyle = BorderStyle.FixedSingle;
-            generic_name_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            generic_name_tb.Location = new Point(109, 247);
-            generic_name_tb.Name = "generic_name_tb";
-            generic_name_tb.Size = new Size(596, 50);
-            generic_name_tb.TabIndex = 11;
-            generic_name_tb.TextChanged += textBox1_TextChanged;
+            quantity_tb.BorderStyle = BorderStyle.FixedSingle;
+            quantity_tb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            quantity_tb.Location = new Point(109, 247);
+            quantity_tb.Name = "quantity_tb";
+            quantity_tb.Size = new Size(596, 50);
+            quantity_tb.TabIndex = 1;
             // 
             // cancel_button
             // 
@@ -304,7 +306,7 @@
             cancel_button.FlatStyle = FlatStyle.Flat;
             cancel_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancel_button.ForeColor = Color.Gray;
-            cancel_button.Location = new Point(1287, 897);
+            cancel_button.Location = new Point(913, 849);
             cancel_button.Name = "cancel_button";
             cancel_button.Size = new Size(234, 69);
             cancel_button.TabIndex = 10;
@@ -314,11 +316,12 @@
             // 
             // clear_button
             // 
+            clear_button.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             clear_button.BackColor = SystemColors.ButtonFace;
             clear_button.FlatStyle = FlatStyle.Flat;
             clear_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clear_button.ForeColor = Color.FromArgb(205, 153, 47);
-            clear_button.Location = new Point(1047, 897);
+            clear_button.Location = new Point(626, 849);
             clear_button.Name = "clear_button";
             clear_button.Size = new Size(234, 69);
             clear_button.TabIndex = 9;
@@ -332,7 +335,7 @@
             save_button.FlatStyle = FlatStyle.Flat;
             save_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             save_button.ForeColor = Color.White;
-            save_button.Location = new Point(807, 897);
+            save_button.Location = new Point(341, 849);
             save_button.Name = "save_button";
             save_button.Size = new Size(234, 69);
             save_button.TabIndex = 7;
@@ -402,6 +405,11 @@
             ResumeLayout(false);
         }
 
+        private void supplier_tb_TextChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
         #endregion
 
         private Panel panel1;
@@ -414,25 +422,25 @@
         private Button clear_button;
         private Button cancel_button;
         private System.Windows.Forms.Timer timer1;
-        private TextBox generic_name_tb;
+        private TextBox quantity_tb;
         private Label label1;
-        private TextBox brand_name_tb;
         private Label label2;
-        private Label label10;
+        private Label label3;
+        private TextBox barcode_tb;
+        private TextBox genericname_tb;
+        private DateTimePicker expiry_datepicker;
+        private TextBox unitprice_tb;
+        private TextBox brandname_tb;
+        private ComboBox dosage_form_cb;
+        private Label label4;
+        private TextBox supplier_tb;
         private Label label9;
         private Label label8;
         private Label label7;
         private Label label6;
         private Label label5;
-        private Label label4;
-        private Label label3;
-        private TextBox barcode_tb;
-        private TextBox supplier_tb;
-        private DateTimePicker manufacture_datepicker;
-        private DateTimePicker expiry_datepicker;
-        private TextBox purchase_price_tb;
-        private TextBox selling_price_tb;
-        private TextBox stock_quantity_tb;
-        private ComboBox dosage_form_cb;
+        private Label total_lbl;
+        private Label label10;
+        private ComboBox unit_cb;
     }
 }

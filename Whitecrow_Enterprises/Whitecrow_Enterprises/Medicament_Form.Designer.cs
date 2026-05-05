@@ -35,7 +35,6 @@
             root_panel = new Panel();
             report_button = new Button();
             delete_button = new Button();
-            restock_button = new Button();
             edit_button = new Button();
             add_button = new Button();
             sell_button = new Button();
@@ -57,7 +56,6 @@
             // 
             root_panel.Controls.Add(report_button);
             root_panel.Controls.Add(delete_button);
-            root_panel.Controls.Add(restock_button);
             root_panel.Controls.Add(edit_button);
             root_panel.Controls.Add(add_button);
             root_panel.Controls.Add(sell_button);
@@ -99,10 +97,6 @@
             delete_button.Text = "Delete";
             delete_button.UseVisualStyleBackColor = false;
             delete_button.Click += delete_button_Click;
-            // 
-            // restock_button
-            // 
-            
             // 
             // edit_button
             // 
@@ -276,7 +270,6 @@
         private DataGridView dataGridView1;
         private Button sell_button;
         private Button delete_button;
-        private Button restock_button;
         private Button edit_button;
         private Button add_button;
         private Panel panel1;
