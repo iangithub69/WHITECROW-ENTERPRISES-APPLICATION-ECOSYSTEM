@@ -107,6 +107,7 @@
             barcode_tb.Name = "barcode_tb";
             barcode_tb.Size = new Size(596, 50);
             barcode_tb.TabIndex = 36;
+            barcode_tb.TextChanged += barcode_tb_TextChanged;
             // 
             // supplier_tb
             // 
@@ -124,6 +125,7 @@
             manufacture_datepicker.Name = "manufacture_datepicker";
             manufacture_datepicker.Size = new Size(596, 50);
             manufacture_datepicker.TabIndex = 34;
+            manufacture_datepicker.Visible = false;
             // 
             // expiry_datepicker
             // 
@@ -153,6 +155,7 @@
             selling_price_tb.PlaceholderText = " ₱ 00.00";
             selling_price_tb.Size = new Size(596, 50);
             selling_price_tb.TabIndex = 31;
+            selling_price_tb.TextChanged += selling_price_tb_TextChanged;
             // 
             // stock_quantity_tb
             // 
@@ -204,6 +207,7 @@
             label8.Size = new Size(274, 45);
             label8.TabIndex = 24;
             label8.Text = "Manufacture Date";
+            label8.Visible = false;
             // 
             // label7
             // 

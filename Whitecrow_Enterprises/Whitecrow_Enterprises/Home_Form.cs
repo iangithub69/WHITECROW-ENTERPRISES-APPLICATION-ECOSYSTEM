@@ -81,7 +81,16 @@ namespace Whitecrow_Enterprises
 
         private void construction_button_Click(object sender, EventArgs e)
         {
+            //set agirculture button to specified color
+            construction_button.BackColor = Color.FromArgb(240, 240, 240);
+            construction_button.ForeColor = Color.FromArgb(28, 29, 30);
+
+            // set medicament button to default color
+            construction_button.BackColor = Color.FromArgb(205, 153, 47);
+            construction_button.ForeColor = Color.FromArgb(240, 240, 240);
+
             formloader_panel.Controls.Clear();
+            
         }
 
         private void livestock_button_Click(object sender, EventArgs e)

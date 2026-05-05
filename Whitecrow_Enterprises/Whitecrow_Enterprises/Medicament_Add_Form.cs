@@ -397,5 +397,15 @@ namespace Whitecrow_Enterprises
                 }
             }
         }
+
+        private void barcode_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selling_price_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

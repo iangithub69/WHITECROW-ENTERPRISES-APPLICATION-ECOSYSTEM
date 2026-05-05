@@ -102,16 +102,7 @@
             // 
             // restock_button
             // 
-            restock_button.BackColor = SystemColors.ButtonFace;
-            restock_button.FlatStyle = FlatStyle.Flat;
-            restock_button.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            restock_button.ForeColor = Color.FromArgb(205, 153, 47);
-            restock_button.Location = new Point(1229, 1449);
-            restock_button.Name = "restock_button";
-            restock_button.Size = new Size(327, 91);
-            restock_button.TabIndex = 10;
-            restock_button.Text = "Restock";
-            restock_button.UseVisualStyleBackColor = false;
+            
             // 
             // edit_button
             // 

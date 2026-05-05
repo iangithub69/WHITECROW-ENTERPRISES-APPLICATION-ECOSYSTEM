@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\medicament_add_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_add_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\whitecrow_enterprises\\medicament_add_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_add_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\whitecrow_enterprises\\medicament_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\medicament_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\medicament_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\medicament_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\whitecrow_enterprises\\medicament_add_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\medicament_add_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\whitecrow_enterprises\\home_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\home_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\home_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\home_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|c:\\users\\iansa\\onedrive\\documents\\github\\whitecrow-enterprises-application-ecosystem\\whitecrow_enterprises\\whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE74852B-1C22-4020-9A7E-1C7FCE5C24A0}|Whitecrow_Enterprises\\Whitecrow_Enterprises.csproj|solutionrelative:whitecrow_enterprises\\blurr_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,31 +51,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Blurr_Form.cs",
-              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs",
-              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Blurr_Form.cs",
-              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs",
-              "RelativeToolTip": "Whitecrow_Enterprises\\Blurr_Form.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwB0AAAAbAAAAAAAAAA==",
+              "Title": "Medicament_Add_Form.cs",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Add_Form.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Medicament_Add_Form.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Add_Form.cs",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Medicament_Add_Form.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T10:04:26.095Z",
+              "WhenOpened": "2026-05-05T08:53:12.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Blurr_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs",
-              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Blurr_Form.cs",
-              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs [Design]",
-              "RelativeToolTip": "Whitecrow_Enterprises\\Blurr_Form.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "Medicament_Form.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.Designer.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Medicament_Form.Designer.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.Designer.cs",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Medicament_Form.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T10:41:58.359Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-05T08:46:11.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "Home_Form.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Home_Form.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Home_Form.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Home_Form.cs [Design]",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Home_Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T07:02:25.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Medicament_Add_Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Add_Form.cs",
               "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Medicament_Add_Form.cs",
@@ -72,19 +100,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Medicament_Form.cs",
-              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.cs",
-              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Medicament_Form.cs",
-              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.cs",
-              "RelativeToolTip": "Whitecrow_Enterprises\\Medicament_Form.cs",
-              "ViewState": "AgIAANkAAAAAAAAAAAAAAOoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T10:01:29.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Medicament_Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.cs",
               "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Medicament_Form.cs",
@@ -93,6 +108,55 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T10:01:25.958Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Medicament_Form.cs",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Medicament_Form.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Medicament_Form.cs",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Medicament_Form.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAArwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T10:01:29.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Home_Form.cs",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Home_Form.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Home_Form.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Home_Form.cs",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Home_Form.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAlwFMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T07:02:33.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Blurr_Form.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Blurr_Form.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs [Design]",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Blurr_Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T10:41:58.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Blurr_Form.cs",
+              "DocumentMoniker": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs",
+              "RelativeDocumentMoniker": "Whitecrow_Enterprises\\Blurr_Form.cs",
+              "ToolTip": "C:\\Users\\iansa\\OneDrive\\Documents\\GitHub\\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\\Whitecrow_Enterprises\\Whitecrow_Enterprises\\Blurr_Form.cs",
+              "RelativeToolTip": "Whitecrow_Enterprises\\Blurr_Form.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwBsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T10:04:26.095Z"
             }
           ]
         }
