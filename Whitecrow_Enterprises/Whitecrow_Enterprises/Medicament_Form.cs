@@ -215,11 +215,11 @@ namespace Whitecrow_Enterprises
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a row to delete.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Ask for password
             string inputPassword = Microsoft.VisualBasic.Interaction.InputBox(
                 "Enter password to confirm deletion:",
                 "Password Required",
@@ -228,61 +228,70 @@ namespace Whitecrow_Enterprises
             );
 
             if (string.IsNullOrEmpty(inputPassword))
+                return;
+
+            if (inputPassword != "password123")
             {
-                // Cancelled or left blank
+                MessageBox.Show("Incorrect password. Deletion canceled.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (inputPassword != "password123") // 🔐 Replace with your password
-            {
-                MessageBox.Show("Incorrect password. Deletion canceled.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Get selected row
             DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-            string generic_name = selectedRow.Cells["GENERIC NAME"]?.Value?.ToString() ?? string.Empty;
 
-            if (string.IsNullOrEmpty(generic_name))
+            // ✅ SAFE ID PARSING (FIXED NULL WARNING)
+            if (!int.TryParse(selectedRow.Cells["id"].Value?.ToString(), out int id))
             {
-                MessageBox.Show("Cannot delete item: Invalid selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid selection. Cannot determine record ID.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DialogResult confirm = MessageBox.Show($"Are you sure you want to delete: {generic_name}?",
-                                                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            string genericName = selectedRow.Cells["GENERIC NAME"]?.Value?.ToString() ?? "";
 
-            if (confirm == DialogResult.Yes)
+            DialogResult confirm = MessageBox.Show(
+                $"Are you sure you want to delete: {genericName}?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
+            string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                string connStr = "server=localhost;user=root;password=2020301243;database=whitecrow_test_server;";
-
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    try
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM medicaments_information WHERE id = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
                     {
-                        conn.Open();
-                        string deleteQuery = "DELETE FROM medicaments_information WHERE generic_name = @generic_name";
+                        cmd.Parameters.AddWithValue("@id", id);
 
-                        using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
                         {
-                            cmd.Parameters.AddWithValue("@generic_name", generic_name);
-                            int rowsAffected = cmd.ExecuteNonQuery();
+                            MessageBox.Show("Item deleted successfully.",
+                                "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("Item deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LoadDataToGrid(); // Refresh the grid
-                            }
-                            else
-                            {
-                                MessageBox.Show("Item could not be found or deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
+                            LoadDataToGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Item could not be found.",
+                                "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message,
+                        "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
