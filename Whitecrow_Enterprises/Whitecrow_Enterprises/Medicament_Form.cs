@@ -213,6 +213,7 @@ namespace Whitecrow_Enterprises
 
         private void delete_button_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select a row to delete.", "No Selection",
@@ -220,12 +221,17 @@ namespace Whitecrow_Enterprises
                 return;
             }
 
+            
+
             string inputPassword = Microsoft.VisualBasic.Interaction.InputBox(
                 "Enter password to confirm deletion:",
                 "Password Required",
                 "",
                 -1, -1
             );
+
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\iansa\OneDrive\Pictures\sure.wav");
+            player.Play();
 
             if (string.IsNullOrEmpty(inputPassword))
                 return;
@@ -312,6 +318,14 @@ namespace Whitecrow_Enterprises
         private void root_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\iansa\OneDrive\Pictures\fahh.wav");
+            player.Play();
+
+            LoadDataToGrid();
         }
     }
 }

@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             root_panel = new Panel();
+            pictureBox2 = new PictureBox();
             report_button = new Button();
             delete_button = new Button();
             edit_button = new Button();
@@ -46,6 +47,7 @@
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             root_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             searchbox_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -54,6 +56,7 @@
             // 
             // root_panel
             // 
+            root_panel.Controls.Add(pictureBox2);
             root_panel.Controls.Add(report_button);
             root_panel.Controls.Add(delete_button);
             root_panel.Controls.Add(edit_button);
@@ -70,6 +73,18 @@
             root_panel.Size = new Size(2401, 1567);
             root_panel.TabIndex = 0;
             root_panel.Paint += root_panel_Paint;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Location = new Point(2315, 140);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(51, 57);
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // report_button
             // 
@@ -251,6 +266,7 @@
             Load += Medicament_Form_Load;
             root_panel.ResumeLayout(false);
             root_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             searchbox_panel.ResumeLayout(false);
             searchbox_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -274,5 +290,6 @@
         private Button add_button;
         private Panel panel1;
         private Button report_button;
+        private PictureBox pictureBox2;
     }
 }
