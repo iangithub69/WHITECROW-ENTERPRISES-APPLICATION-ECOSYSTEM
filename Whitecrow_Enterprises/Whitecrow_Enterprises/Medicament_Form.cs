@@ -58,7 +58,7 @@ namespace Whitecrow_Enterprises
                 try
                 {
                     conn.Open();
-                    string query = @"SELECT quantity AS 'QUANTITY', unit AS 'UNIT', generic_name AS 'GENERIC NAME', dosage AS 'DOSAGE', brand_name AS 'BRAND NAME', barcode AS 'LOT NO.', expiry_date as 'EXPIRY DATE', unit_price AS 'UNIT PRICE', supplier AS 'SUPPLIER'  
+                    string query = @"SELECT id AS 'ID',quantity AS 'QUANTITY', unit AS 'UNIT', generic_name AS 'GENERIC NAME', dosage AS 'DOSAGE', brand_name AS 'BRAND NAME', barcode AS 'LOT NO.', expiry_date as 'EXPIRY DATE', unit_price AS 'UNIT PRICE', supplier AS 'SUPPLIER'  
                             FROM medicaments_information
                             ORDER BY generic_name ASC";
 
@@ -93,7 +93,59 @@ namespace Whitecrow_Enterprises
 
         private void edit_button_Click(object sender, EventArgs e)
         {
+            // 1. Validate first
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a row first.");
+                return;
+            }
 
+            DataGridViewRow row = dataGridView1.CurrentRow;
+
+            // 2. Safe ID extraction
+            if (row.Cells["ID"].Value == null ||
+                !int.TryParse(row.Cells["ID"].Value.ToString(), out int id))
+            {
+                MessageBox.Show("Invalid ID selected.");
+                return;
+            }
+
+            // 3. Extract values
+            string quantity = row.Cells["QUANTITY"].Value?.ToString() ?? "";
+            string unit = row.Cells["UNIT"].Value?.ToString() ?? "";
+            string genericName = row.Cells["GENERIC NAME"].Value?.ToString() ?? "";
+            string dosage = row.Cells["DOSAGE"].Value?.ToString() ?? "";
+            string brandName = row.Cells["BRAND NAME"].Value?.ToString() ?? "";
+            string barcode = row.Cells["LOT NO."].Value?.ToString() ?? "";
+            string expiryDate = row.Cells["EXPIRY DATE"].Value?.ToString() ?? "";
+            string unitPrice = row.Cells["UNIT PRICE"].Value?.ToString() ?? "";
+            string supplier = row.Cells["SUPPLIER"].Value?.ToString() ?? "";
+
+            // 4. Show blur form
+            Blurr_Form blurForm = new Blurr_Form();
+            blurForm.Show();
+
+            // 5. PASS ID (this is the critical fix)
+            using (Medicament_Edit_Form editForm = new Medicament_Edit_Form(
+                id, // ✅ REQUIRED
+                quantity,
+                unit,
+                genericName,
+                dosage,
+                brandName,
+                barcode,
+                expiryDate,
+                unitPrice,
+                supplier))
+            {
+                editForm.ShowDialog();
+            }
+
+            // 6. Close blur
+            blurForm.Close();
+
+            // 7. Refresh grid (important)
+            LoadDataToGrid();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

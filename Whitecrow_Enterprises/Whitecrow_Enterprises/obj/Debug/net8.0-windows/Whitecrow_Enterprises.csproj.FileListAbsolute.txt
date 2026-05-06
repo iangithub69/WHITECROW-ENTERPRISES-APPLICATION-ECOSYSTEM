@@ -75,3 +75,4 @@ C:\Users\iansa\OneDrive\Documents\GitHub\WHITECROW-ENTERPRISES-APPLICATION-ECOSY
 C:\Users\iansa\OneDrive\Documents\GitHub\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\Whitecrow_Enterprises\Whitecrow_Enterprises\obj\Debug\net8.0-windows\ref\Whitecrow_Enterprises.dll
 C:\Users\iansa\OneDrive\Documents\GitHub\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\Whitecrow_Enterprises\Whitecrow_Enterprises\obj\Debug\net8.0-windows\Whitecrow_Enterprises.Blurr_Form.resources
 C:\Users\iansa\OneDrive\Documents\GitHub\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\Whitecrow_Enterprises\Whitecrow_Enterprises\obj\Debug\net8.0-windows\Whitecrow_Enterprises.Medicament_Add_Form.resources
+C:\Users\iansa\OneDrive\Documents\GitHub\WHITECROW-ENTERPRISES-APPLICATION-ECOSYSTEM\Whitecrow_Enterprises\Whitecrow_Enterprises\obj\Debug\net8.0-windows\Whitecrow_Enterprises.Medicament_Edit_Form.resources
